@@ -2,7 +2,7 @@
 
 ###Origin
 
-Nounalizer was developed at the National Geospatial-Intelligence Agency (NGA) by a federal government employee in the course of their employment, so it is not subject to copyright protection and is in the public domain.
+Wedge Maker was developed at the National Geospatial-Intelligence Agency (NGA) by a federal government employee in the course of their employment, so it is not subject to copyright protection and is in the public domain.
 
 ###Pull Requests
 
