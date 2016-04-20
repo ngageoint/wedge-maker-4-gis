@@ -1,8 +1,8 @@
-#About
+##About
 
 The Wedge Maker for ArcGIS is an ArcGIS tool that allows the user to create wedge and arcband (a wedge with a part of the cone of the wedge erased) shapes.
 
-##Usage
+###Usage
 
 The user chooses one of the two tools within the ArcGIS toolbox.  The different tools allow the user to specify either the two lines of bearing or the line of bearing and swath that will help define each wedge/arcband.  After opening either tool in ArcGIS, the user specifies the following:
 
@@ -14,15 +14,15 @@ The user chooses one of the two tools within the ArcGIS toolbox.  The different 
 
 The entries in the radius field(s) must be in the format required by ESRI's ArcGIS Buffer tool.  For example, "5 MILES", "3.41 kilometers", or "23 NauticalMiles".  The units must be specified.  If the user provides an inner radius field, then input rows that contain an entry in that field will be made into an arcband shape by creating the full wedge shape and then erasing from the center of the wedge outward by the distance specified in the inner radius field.  If the user provides an inner radius field, the user may still leave some entries in the inner radius field blank, in which case a full wedge will be created for that row.
 
-#Methodology (summary)
+###Methodology (summary)
 
 For each input point, the tool reads the point's coordinates and attributes.  The tool buffers the point by the outer radius distance, and then calculates the vertices of a triangle that can be used to clip or erase from the buffer in order to leave the desired wedge shape.  Then, if the user wanted an arcband shape, the tool buffers the point again by the inner radius distance and then erases from the wedge shape with the buffer.  Finally, the tool combines all of the output wedge/arcband shapes into a single polygon feature class and uses the Join Field tool to join the input point feature class's attribute table to the output polygon feature class's attribute table.
 
-##Methodology (in-depth)
+####Methodology (in-depth)
 
 
 
-##Notes
+###Notes
 
 Because the tool performs distance calculations, the tool requires that the input point feature class be projected.  The tool attempts to detect if the user provides unprojected data (such as WGS84 lat-long data) and halts operations if it detects unprojected data.  If the tool fails to detect the unprojected data, it will still run by the output wedge/arcband shapes cannot be considered reliable.
 
